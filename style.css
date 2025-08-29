@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
+
+*{ /*These settings will be applied to ALL elements in the website. Every text, images etc.*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html{ /*Applying styles directly to entire page of the HTML document*/
+    font-size: 60%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: beige;
+}
+
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: white;
+    font-weight: 800;
+    cursor: pointer; /*to indicate that an element is interactive and can be clicked. When a user hovers over an element with this property applied, the mouse cursor will change to a hand icon*/
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1); /*self explanatory. hover, logo scales; bigger/smaller*/
+}
+
+nav a{ /*nav a : it applies to all 'a' links inside <nav> element; <a href=""> etc */
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem; /*sets the margin area on the left side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.*/
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover, nav a.active{
+    color: #ffc0cb;
+    border-bottom: 3px solid #ffc0cb;
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute; /*When an element is position: absolute;, it no longer occupies space in the layout, and other elements behave as if it's not there.*/
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #ffc0cb;
+        border-bottom: 3px solid #ffc0cb;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: black;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        overflow: hidden;
+    }
+
+    nav a:hover, nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #ffc0cb;
+    }
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home{ /*class; mods for home class*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 2rem 0;
+}
+
+span{
+    color: #ffc0cb;
+}
+
+.home-content h3{
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    padding: 1rem 0;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.home-img{
+    border-radius: 50%;
+}
+
+.home-img img{
+    position: relative; /*This means that the element will initially occupy its space in the layout*/
+    width: 20vw; /*width: 50vw; would set an element's width to 50% of the current browser window's width. vh = viewport height*/
+    border-radius: 50%;
+    box-shadow: 0 0 24px solid #ffc0cb;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #ffc0cb;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.social-icons a:hover{
+    color: black;
+    transform: scale(1.3) translate(-5px);
+    background-color: #ffc0cb;
+    box-shadow: 0 0 25px #ffc0cb; /*the glow effect*/
+}
+
+.butn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #ffc0cb;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #ffc0cb;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.butn:hover{
+    transform: scale3d(1.03);
+    background-color: #ffc0cb;
+    color: black;
+    box-shadow: 0 0 25px #ffc0cb;
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "Web Designer + Developer";
+    color: #ffc0cb;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{ /* @keyframes : used to control the steps in an animation sequence*/
+    to{
+        border-left:3px solid #ffc0cb;
+    }
+}
+
+@keyframes words{
+    0%, 12.5%{
+        content: "Web Developer"
+    }
+    13.5%, 25%{
+        content: "Web Designer"
+    }
+    26.5%, 37.5%{
+        content: "Software Application Developer"
+    }
+    38.5%, 50%{
+        content: "3D Digital Artist"
+    }
+    51%, 62.5%{
+        content: "2D Digital Artist"
+    }
+    63.5%, 75%{
+        content: "Gamer"
+    }
+    76%, 87.5%{
+        content: "Video Editor"
+    }
+    88.5%, 100%{
+        content: "Designer"
+    }
+}
+
+@media(max-width: 1000px){ /*this function is for mobile view (if the website detects a max-width of 1000px, it would display the content according to what u put in here*/
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 40vw;
+        margin-top: 2rem;
+       
+    }
+}
